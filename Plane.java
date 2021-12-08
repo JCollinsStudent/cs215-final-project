@@ -14,6 +14,12 @@ public class Plane implements Comparable<Plane> {
         this.queuePosition = 0;
     }
 
+    public Plane(int queuePosition, String queueType) {
+        this.flightID = UUID.randomUUID();
+        this.currentQueue = QueueType.valueOf(queueType);
+        this.queuePosition = queuePosition;
+    }
+
     // public Plane() {
 
     // }
@@ -34,6 +40,9 @@ public class Plane implements Comparable<Plane> {
         this.queuePosition = position;
     }
 
+    public QueueType getCurrentQueue() {
+        return this.currentQueue;
+    }
     public void setCurrentQueue(String type) {
         this.currentQueue = QueueType.valueOf(type);
     }
@@ -73,5 +82,13 @@ public class Plane implements Comparable<Plane> {
                 }
         }
         return 0;
+    }
+
+    public static void printReady() {
+
+    }
+
+    public static void printApproaching() {
+
     }
 }
